@@ -30,7 +30,7 @@ export default function Home() {
 
 			setTimeout(() => {
 				setAlertMessage("");
-			}, 1000);
+			}, 3000);
 
 			return;
 		}
@@ -58,21 +58,24 @@ export default function Home() {
 
 				setTimeout(() => {
 					setAlertMessage("");
-				}, 1000);
+				}, 3000);
 			} else if (res.status === 409) {
 				setAlertMessage(data.message || "A contact with this email already exists.");
 				setAlertType("destructive");
+				
 
 				setTimeout(() => {
 					setAlertMessage("");
-				}, 1000);
+				}, 3000);
 			} else {
 				setAlertMessage(data.message || "An error occurred. Please try again.");
 				setAlertType("destructive");
 
+				console.log(data)
+
 				setTimeout(() => {
 					setAlertMessage("");
-				}, 1000);
+				}, 3000);
 			}
 		} catch (error) {
 			setAlertMessage("An error occurred. Please try again later.");
