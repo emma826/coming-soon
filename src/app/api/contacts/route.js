@@ -31,8 +31,7 @@ export async function POST(req) {
         const { firstname, lastname, email } = await req.json();
         const contactData = {
             properties: {
-                firstname,
-                lastname,
+                firstname : `${firstname} ${lastname}`,
                 email,
             },
         };
